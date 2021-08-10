@@ -470,12 +470,8 @@ body {
   max-width: 50px;
 }
 
-.w-35 {
-  max-width: 350px;
-}
-
-.w-54 {
-  max-width: 540px;
+.w-12 {
+  max-width: 120px;
 }
 
 .h-1 {
@@ -498,12 +494,8 @@ body {
   max-height: 50px;
 }
 
-.h-35 {
-  max-height: 350px;
-}
-
-.h-54 {
-  max-height: 540px;
+.h-12 {
+  max-height: 120px;
 }
 
 .col-1 {
@@ -1418,6 +1410,22 @@ body {
     -o-object-fit: cover;
        object-fit: cover;
     margin: 0 auto;
+  }
+}
+
+.home-live-stream {
+  background-image: url("https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/exhibition-week6/people2.png");
+}
+
+.home-live-stream > div {
+  padding: 40px 24px;
+  background-color: #190014cc;
+  width: 445px;
+}
+
+@media (max-width: 767px) {
+  .home-live-stream > div {
+    width: 100%;
   }
 }
 /*# sourceMappingURL=all.css.map */

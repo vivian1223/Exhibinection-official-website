@@ -36,3 +36,17 @@
     }
 }
 
+.home-live-stream{
+    background-image: url('https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/exhibition-week6/people2.png');
+    &>div{
+        padding: 40px 24px;
+        background-color: #190014cc;
+        width: 445px;
+    }
+    @include mobile{
+        &>div{
+
+            width: 100%;
+        }
+    }
+}
