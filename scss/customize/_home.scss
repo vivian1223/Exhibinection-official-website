@@ -1,0 +1,8 @@
+.home-top-banner{
+    background-image: url('https://images.unsplash.com/photo-1506846540181-347008948fff?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1193&q=80');
+    padding: 167px 180px;
+    background-position: center;
+    @include mobile{
+        padding: 254px 0 80px 15px;
+    }
+}

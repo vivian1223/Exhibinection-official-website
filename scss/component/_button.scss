@@ -1,0 +1,46 @@
+//file button
+
+.btn{
+    font-weight: 700;
+    padding: $spacer $spacer *2.5 ;
+    border-radius: 4px;
+    display: inline-block;
+    text-align: center;
+}
+.btn-file{
+    background-color: $light;
+    color: $dark;
+    border: 1px $info solid;
+    &:hover{
+        background-color: darken($light, 10%);
+    }
+}
+
+@each $color in $color-list {
+    .btn-#{$color}{
+        color: map-get($color-map,$color);
+        border: 1px map-get($color-map,$color) solid;
+        &:hover{
+            background-color:map-get($color-map,$color);
+            color: $white;
+        }
+    }
+}
+
+
+@each $color in $color-list {
+    .btn-#{$color}-lg{
+        color: map-get($color-map,$color);
+        border: 1px map-get($color-map,$color) solid;
+        padding: $spacer*2  $spacer *12 ;
+        &:hover{
+            background-color:map-get($color-map,$color);
+            color: $white;
+        }
+    }
+}
+
+//例外
+.btn-white:hover,.btn-white-lg:hover{
+    color: $dark;
+    }

@@ -1,0 +1,18 @@
+@each $name in $grid-name {
+    .col-#{$name}{
+        width: $grid-spacer * $name;
+    }  
+}
+
+.container{
+    max-width: 1110px;
+    margin: 0 auto;
+}
+
+.container-fluid{
+width: 100%;
+}
+
+.row{
+    display: flex;
+}
