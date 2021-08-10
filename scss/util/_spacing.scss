@@ -28,10 +28,17 @@
     }
 }
 
+@include mobile{
+    .mx-auto-sm{
+        margin: 0 auto;
+    }
+}
+
+
 //width
 @each $name in $width-name {
     .w-#{$name}{
-        width: $width-spacer * $name;
+        max-width: $width-spacer * $name;
     }
 }
 
@@ -39,6 +46,6 @@
 
 @each $name in $height-name {
     .h-#{$name}{
-        height: $height-spacer *$name;
+        max-height: $height-spacer *$name;
     }
 }

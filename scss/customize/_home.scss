@@ -6,3 +6,33 @@
         padding: 254px 0 80px 15px;
     }
 }
+
+.home-ticket{
+    display: flex;
+    margin-bottom: 20px;
+    img{
+        width: 350px;
+        height: 350px;
+        object-fit: cover;
+    }
+}
+
+.home-ticket-sm{
+    display: none;
+}
+
+@include mobile{
+    .home-ticket{
+        display: none;
+    }
+    .home-ticket-sm{
+        display: flex;
+        flex-direction: column;
+        img{
+            height: 345px;
+            object-fit: cover;
+            margin: 0 auto;
+        }
+    }
+}
+
