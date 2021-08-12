@@ -93,20 +93,26 @@
 
 .home-news{
   background-image: url('https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/exhibition-week6/wladislaw-peljuchno-Y_f1aHpR1tc-unsplash.jpg');
-  padding-bottom: 36px;
-  padding-left: 85px;
-  display: flex;
-  flex-direction: column;
-  padding-top: 208px;
   background-size: cover;
+  background-position: center;
   font-size: 32px;
-  font-weight: 700;
-  color: $white;
+  p{
+   font-weight: 700; 
+  }
+  
+  &>div{
+    padding-bottom: 36px;
+    padding-left: 85px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 208px;
+    color: $white;  
+  }
   @include mobile{
     padding-left: 15px;
     background-position: left;
     font-size: 24px;
-  }
+}
 }
 
 .home-email{
