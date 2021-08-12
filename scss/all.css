@@ -1711,6 +1711,12 @@ body {
 }
 
 @media (max-width: 767px) {
+  .home-news > div {
+    padding-left: 15px;
+  }
+}
+
+@media (max-width: 767px) {
   .home-news {
     padding-left: 15px;
     background-position: left;
