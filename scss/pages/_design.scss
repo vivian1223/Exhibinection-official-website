@@ -1,0 +1,29 @@
+.design-list-img{
+    object-fit: cover;
+    width: 445px;
+    height: 285px;
+    margin-left: 30px;
+    @include mobile{
+        width: 345px;
+        height: 221px;
+        margin-left: 0;
+        margin-bottom: 16px;
+    }
+}
+
+    .design-rwd-mobile{
+        display: none;
+    }
+    .design-rwd-pc{
+        display: block;
+    }
+
+
+@include mobile{
+    .design-rwd-pc{
+        display: none;
+    }
+    .design-rwd-mobile{
+        display: block;
+    }
+}

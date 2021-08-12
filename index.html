@@ -1,259 +1,362 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
     <link rel="stylesheet" href="scss/all.css">
     <title>Exhibinection</title>
 </head>
+
 <body>
-    <div class="container">
-        <div class="row justify-content-center align-items-center pt-3 pb-3 ps-1 pe-1">
-            <div class=" flex-grow-1 d-flex justify-content-center ">
-                <h1 class="fs-5 text-center d-inline-block ms-7"><a class="link-primary" href="#">EXHIBINECTION</a></h1>
+    <div id="app">
+        <div class="container">
+            <div class="row justify-content-center align-items-center pt-3 pb-3 ps-1 pe-1">
+                <div class=" flex-grow-1 d-flex justify-content-center ">
+                    <h1 class="fs-5 text-center d-inline-block ms-7"><a @click.prevent="showHomePage" class="link-primary" href="#">EXHIBINECTION</a></h1>
+                </div>
+                <ul class="row  align-items-center">
+                    <li><a class="d-sm-none link-info fs-2 lh-1 " href="#">Sign in</a></li>
+                    <li><a class="d-sm-none link-info ms-6 fs-2 lh-1" href="#">Sign up</a></li>
+                    <li><a class="link-info ms-6 fs-3 lh-1" href="#"><i class="fas fa-ticket-alt"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="home-top-banner">
+            <div class="container">
+                <h2 class="font-white font-bold fs-7 lh-1 mb-1">
+                    台北當代藝術展
+                </h2>
+                <p class="font-white font-bold fs-3 lh-1 mb-2">
+                    01 JUN - 31 OCT
+                </p>
+                <div class="d-flex">
+                    <a href="#" class="btn btn-danger-lg">購買票券</a>
+                    <a href="#" class="btn btn-white-lg ms-1">詳細資訊</a>
+                </div>
+            </div>
+        </div>
+        <div class="border-bottom-dark pt-1 pb-2">
+            <div class="container">
+                <ul class="d-flex justify-content-evenly">
+                    <li><a href="#" class="link-info">音樂</a></li>
+                    <li><a href="#" class="link-info">戲劇</a></li>
+                    <li><a @click.prevent="showDesignPage" href="#" class="link-info">設計</a></li>
+                    <li><a href="#" class="link-info">藝術</a></li>
+                    <li><a href="#" class="link-info">美食</a></li>
+                    <li><a href="#" class="link-info">旅遊</a></li>
+                    <li><a href="#" class="link-info">電影</a></li>
+                    <li><a href="#" class="link-info">親子</a></li>
+                    <li><a href="#" class="link-info">期間限定</a></li>
+                </ul>
+            </div>
+    
+        </div>
+        <!-- 首頁開始 -->
+        <!-- 首頁熱門特展開始 -->
+        <div v-if="homePage">
+            <div class="container pt-6">
+                <h3 class=" font-bold fs-7 lh-1 mb-4  ps-1">熱門特展</h3>
+                <ul class=" mb-7">
+                    <li class="home-ticket">
+                        <img class="w-35 h-35 object-fit-cover"
+                            src="https://images.unsplash.com/photo-1545987796-b199d6abb1b4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80"
+                            alt="2020 台味設計展">
+                        <div class=" container-fluid bg-light d-flex flex-column justify-content-between ps-1 pe-1 pt-5 pb-5">
+                            <div class="d-flex justify-content-between fs-3 ">
+                                <div class="w-54">
+                                    <h4 class="font-bold">2020 台味設計展</h4>
+                                    <p class="font-info mb-1">$350</p>
+                                    <p>一年一度的台味設計展由經濟部工業局主辦、台灣創意設計中心執行，每年，針對在地生活、文化及產業發展特色，運用設計思考詮釋新時代的意涵，並以展覽呈現在地設計。</p>
+                                </div>
+                                <span class="font-bold">
+                                    01<br>JUN<br> |<br> 31<br> OCT
+                                </span>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between">
+                                <ul class="d-flex">
+                                    <li><a href="#" class="btn btn-primary">購買票券</a></li>
+                                    <li><a href="#" class="btn btn-primary ms-1">詳細資訊</a></li>
+                                </ul>
+        
+                                <a class="link-dark" href="#"><i class="fab fa-facebook fs-5"></i></a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="home-ticket-sm bg-light p-1 mb-2">
+                        <img class=""
+                            src="https://images.unsplash.com/photo-1545987796-b199d6abb1b4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80"
+                            alt="2020 台味設計展">
+                        <div class="mt-1">
+                            <div class="d-flex justify-content-between">
+                                <div class="d-flex">
+                                    <h4 class="fs-2 font-bold">2020 台味設計展</h4>
+                                    <a href="#" class="link-dark">
+                                        <i class="fab fa-facebook fs-2 ms-1"></i>
+                                    </a>
+                                </div>
+                                <span class="fs-2 font-bold">01 JUN — 31 OCT</span>
+                            </div>
+                            <p class="mt-1 mb-1 font-info">$350</p>
+                            <p class="mb-6">一年一度的台味設計展由經濟部工業局主辦、台灣創意設計中心執行，每年，針對在地生活、文化及產業發展特色，運用設計思考詮釋新時代的意涵，並以展覽呈現在地設計。</p>
+                            <ul class="d-flex">
+                                <li><a href="#" class="btn btn-primary">購買票券</a></li>
+                                <li><a href="#" class="ms-1 btn btn-primary">收藏展覽</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="home-ticket">
+                        <img class="w-35 h-35 object-fit-cover"
+                            src="https://images.unsplash.com/photo-1510520001634-6af954f45759?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1506&q=80"
+                            alt="2020 台味設計展">
+                        <div class=" container-fluid bg-light d-flex flex-column justify-content-between ps-1 pe-1 pt-5 pb-5">
+                            <div class="d-flex justify-content-between fs-3 ">
+                                <div class="w-54">
+                                    <h4 class="font-bold">2020 台味設計展</h4>
+                                    <p class="font-info mb-1">$350</p>
+                                    <p>一年一度的台味設計展由經濟部工業局主辦、台灣創意設計中心執行，每年，針對在地生活、文化及產業發展特色，運用設計思考詮釋新時代的意涵，並以展覽呈現在地設計。</p>
+                                </div>
+                                <span class="font-bold">
+                                    01<br>JUN<br> |<br> 31<br> OCT
+                                </span>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between">
+                                <ul class="d-flex">
+                                    <li><a href="#" class="btn btn-primary">購買票券</a></li>
+                                    <li><a href="#" class="btn btn-primary ms-1">詳細資訊</a></li>
+                                </ul>
+        
+                                <a class="link-dark" href="#"><i class="fab fa-facebook fs-5"></i></a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="home-ticket-sm bg-light p-1 mb-2">
+                        <img class=""
+                            src="https://images.unsplash.com/photo-1510520001634-6af954f45759?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1506&q=80"
+                            alt="2020 台味設計展">
+                        <div class="mt-1">
+                            <div class="d-flex justify-content-between">
+                                <div class="d-flex">
+                                    <h4 class="fs-2 font-bold">2020 台味設計展</h4>
+                                    <a href="#" class="link-dark">
+                                        <i class="fab fa-facebook fs-2 ms-1"></i>
+                                    </a>
+                                </div>
+                                <span class="fs-2 font-bold">01 JUN — 31 OCT</span>
+                            </div>
+                            <p class="mt-1 mb-1 font-info">$350</p>
+                            <p class="mb-6">一年一度的台味設計展由經濟部工業局主辦、台灣創意設計中心執行，每年，針對在地生活、文化及產業發展特色，運用設計思考詮釋新時代的意涵，並以展覽呈現在地設計。</p>
+                            <ul class="d-flex">
+                                <li><a href="#" class="btn btn-primary">購買票券</a></li>
+                                <li><a href="#" class="ms-1 btn btn-primary">收藏展覽</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="home-ticket">
+                        <img class="w-35 h-35 object-fit-cover"
+                            src="https://images.unsplash.com/photo-1545178803-4056771d60a3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80"
+                            alt="2020 台味設計展">
+                        <div class=" container-fluid bg-light d-flex flex-column justify-content-between ps-1 pe-1 pt-5 pb-5">
+                            <div class="d-flex justify-content-between fs-3 ">
+                                <div class="w-54">
+                                    <h4 class="font-bold">2020 台味設計展</h4>
+                                    <p class="font-info mb-1">$350</p>
+                                    <p>一年一度的台味設計展由經濟部工業局主辦、台灣創意設計中心執行，每年，針對在地生活、文化及產業發展特色，運用設計思考詮釋新時代的意涵，並以展覽呈現在地設計。</p>
+                                </div>
+                                <span class="font-bold">
+                                    01<br>JUN<br> |<br> 31<br> OCT
+                                </span>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between">
+                                <ul class="d-flex">
+                                    <li><a href="#" class="btn btn-primary">購買票券</a></li>
+                                    <li><a href="#" class="btn btn-primary ms-1">詳細資訊</a></li>
+                                </ul>
+        
+                                <a class="link-dark" href="#"><i class="fab fa-facebook fs-5"></i></a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="home-ticket-sm bg-light p-1 mb-2">
+                        <img class=""
+                            src="https://images.unsplash.com/photo-1545178803-4056771d60a3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80"
+                            alt="2020 台味設計展">
+                        <div class="mt-1">
+                            <div class="d-flex justify-content-between">
+                                <div class="d-flex">
+                                    <h4 class="fs-2 font-bold">2020 台味設計展</h4>
+                                    <a href="#" class="link-dark">
+                                        <i class="fab fa-facebook fs-2 ms-1"></i>
+                                    </a>
+                                </div>
+                                <span class="fs-2 font-bold">01 JUN — 31 OCT</span>
+                            </div>
+                            <p class="mt-1 mb-1 font-info">$350</p>
+                            <p class="mb-6">一年一度的台味設計展由經濟部工業局主辦、台灣創意設計中心執行，每年，針對在地生活、文化及產業發展特色，運用設計思考詮釋新時代的意涵，並以展覽呈現在地設計。</p>
+                            <ul class="d-flex">
+                                <li><a href="#" class="btn btn-primary">購買票券</a></li>
+                                <li><a href="#" class="ms-1 btn btn-primary">收藏展覽</a></li>
+                            </ul>
+                        </div>
+                    </li>
+        
+                </ul>
+            </div>
+            <!-- 首頁熱門特展結束 -->
+            <!-- 直播回顧開始 -->
+            <div class="container pb-6">
+                <h4 class=" font-bold fs-7 lh-1 mb-4 ps-1">
+                    直播回顧
+                </h4>
+                <div class="home-live-stream">
+                    <div class="d-flex flex-column">
+                        <h5 class="font-white fs-6 font-bold mb-6"><span class="border-right-white pe-1">開幕對談</span><span
+                                class="ps-1">藝術展演巡禮</span></h5>
+                        <img class="w-12 h-12 mb-1"
+                            src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/exhibition-week6/people.png"
+                            alt="臺北現代聯合總監Ken Hsu">
+                        <p class=" font-white mb-1">臺北現代聯合總監｜Ken Hsu</p>
+                        <p class="mb-2 font-white">獨家由藝術家、策展人、畫廊總監帶您欣賞台北藝術特展，感受雕塑、展演及當代日常文化之間微妙的關係。</p>
+                        <div>
+                            <a href="#" class="btn btn-danger">點此觀看</a>
+                        </div>
+        
+                    </div>
+        
+                </div>
+            </div>
+            <!-- 直播回顧結束 -->
+            <!-- 首頁結束 -->
+        </div>
+
+        <div v-if="designPage">
+            <!-- 設計頁面 pc 版開始 -->   
+            <ul class="design-rwd-pc">
+                <li  class="pt-7 pb-6 bg-primary">
+                    <div class="ps-1 container row font-white  ">
+                        <div class="col-4">
+                        <h2  class="fs-7 font-bold">2020 台味設計展</h2>
+                        <p class="fs-2">一年一度的台味設計展由經濟部工業局主辦、台灣創意設計中心執行，每年，針對在地生活、文化及產業發展特色，運用設計思考詮釋新時代的意涵，並以展覽呈現在地設計。</p>
+                    </div>
+                    <img class="design-list-img" src="https://images.unsplash.com/photo-1545987796-b199d6abb1b4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80" alt="2020 台味設計展">
+                    <span class="font-bold fs-3 ms-6 align-self-end ">
+                        01<br>JUN<br> |<br> 31<br> OCT
+                    </span>
+                    </div>
+                </li >
+                <li  class="pt-7 pb-6">
+                    <div class="ps-1 container row font-primary  justify-content-end ">
+                        <div class="col-4">
+                        <h2  class="fs-7 font-bold">No.22 線上設計展</h2>
+                        <p class="fs-2">這是一個專屬於設計系畢業生的展覽，沒有華麗的名號、沒有浮誇的獎賞。讓我們用作品與理念，去碰撞真實世界裡的各種問題，創造更多美好的人事物。讓這個地球、這個世界變成每一個人心目中的理想鄉。</p>
+                    </div>
+                    <img class="design-list-img" src="https://images.unsplash.com/photo-1510520001634-6af954f45759?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1506&q=80" alt="No.22 線上設計展">
+                    <span class="font-bold fs-3 ms-6 align-self-end ">
+                        01<br>JUN<br> |<br> 31<br> OCT
+                    </span>
+                    </div>
+                </li >
+                <li  class="pt-7 pb-6 bg-primary">
+                    <div class="ps-1 container row font-white  ">
+                        <div class="col-4">
+                        <h2  class="fs-7 font-bold">高雄設計節</h2>
+                        <p class="fs-2">設計大高雄究竟是怎麼一回事？在這「設計」詞彙有點氾濫的年代，或許我們也搞不清楚究竟誰被誰設計了，設計生活？還是被生活設計？而當高雄這座城市建設硬體已相當程度完備時，文化軟實力又該如何輸出？</p>
+                    </div>
+                    <img class="design-list-img" src="https://images.unsplash.com/photo-1545178803-4056771d60a3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80" alt="高雄設計節">
+                    <span class="font-bold fs-3 ms-6 align-self-end ">
+                        01<br>JUN<br> |<br> 31<br> OCT
+                    </span>
+                    </div>
+                </li >
+        </ul>
+    
+        
+        <!-- 設計頁面 pc 版結束 -->
+        <!-- 設計頁面 mobile 版開始 -->
+        <ul class="design-rwd-mobile">
+            <li class="container bg-primary d-flex flex-column pt-5 pb-5 ps-1 pe-1 font-white ">
+                <img class="design-list-img" src="https://images.unsplash.com/photo-1545987796-b199d6abb1b4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80" alt="2020 台味設計展">
+                <span class="fs-2 mb-1">01 JUN — 31 OCT</span>
+                <h2 class="fs-5 mb-1 font-bold">2020 台味設計展</h2>
+                <p>一年一度的台味設計展由經濟部工業局主辦、台灣創意設計中心執行，每年，針對在地生活、文化及產業發展特色，運用設計思考詮釋新時代的意涵，並以展覽呈現在地設計。</p>
+            </li>
+            <li class="container  d-flex flex-column pt-5 pb-5 ps-1 pe-1 font-primary ">
+                <img class="design-list-img" src="https://images.unsplash.com/photo-1510520001634-6af954f45759?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1506&q=80" alt="No.22 線上設計展">
+                <span class="fs-2 mb-1">01 JUN — 31 OCT</span>
+                <h2 class="fs-5 mb-1 font-bold">2020 台味設計展</h2>
+                <p>一年一度的台味設計展由經濟部工業局主辦、台灣創意設計中心執行，每年，針對在地生活、文化及產業發展特色，運用設計思考詮釋新時代的意涵，並以展覽呈現在地設計。</p>
+            </li>
+            <li class="container bg-primary d-flex flex-column pt-5 pb-5 ps-1 pe-1 font-white ">
+                <img class="design-list-img" src="https://images.unsplash.com/photo-1545178803-4056771d60a3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80" alt="高雄設計節">
+                <span class="fs-2 mb-1">01 JUN — 31 OCT</span>
+                <h2 class="fs-5 mb-1 font-bold">2020 台味設計展</h2>
+                <p>一年一度的台味設計展由經濟部工業局主辦、台灣創意設計中心執行，每年，針對在地生活、文化及產業發展特色，運用設計思考詮釋新時代的意涵，並以展覽呈現在地設計。</p>
+            </li>
+        </ul>
+        <!-- 設計頁面 mobile 版結束 -->
+        </div>
+        
+        <!-- 猜猜你也喜歡開始 -->
+        <div class="container  pt-6">
+            <h4 class=" font-bold fs-7 lh-1 mb-4 ps-1">
+                猜你也喜歡...
+            </h4>
+            <ul class="home-recommendation-list">
+                <li class="home-recommendation-item1">
+                    <img class=""
+                        src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/exhibition-week6/ricardo-gomez-angel-WxpnuLzqZN4-unsplash.jpg"
+                        alt="No.22 線上設計展">
+                    <h5 class="font-bold fs-3">No.22 線上設計展</h5>
+                    <p>$350</p>
+                </li>
+                <li class="home-recommendation-item1">
+                    <img class=""
+                        src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/exhibition-week6/petri-heiskanen-bR9gFJqAnzA-unsplash.jpg"
+                        alt="No.22 線上設計展">
+                    <h5 class="font-bold fs-3">No.22 線上設計展</h5>
+                    <p>$350</p>
+                </li>
+                <li class="home-recommendation-item2">
+                    <img class=""
+                        src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/exhibition-week6/museums-victoria-kiDwVL_5ZBY-unsplash%20(1).jpg"
+                        alt="No.22 線上設計展">
+                    <h5 class="font-bold fs-3">No.22 線上設計展</h5>
+                    <p>$350</p>
+                </li>
+            </ul>
+        </div>
+        <!-- 猜猜你也喜歡結束 -->
+        <!-- 最新消息開始 -->
+        <div class="container pt-6 pt-sm-2">
+            <div class="home-news ">
+                <p class="mb-1">想收到最新消息嗎？<br>快訂閱我們！</p>
+                <div class="d-flex home-email">
+                    <input class="" type="email" name="email" placeholder="輸入您的電子信箱">
+                    <a href="#" class="">訂閱</a>
+                </div>
+            </div>
+        </div>
+        <!-- 最新消息結束 -->
+    
+        <!-- footer 開始 -->
+        <div class="container pt-5 pb-5 ps-7 pe-7 p-sm-1 d-flex justify-content-between">
+            <div class="d-flex align-items-center flex-sm-column">
+                <p class="fs-5">EXHIBINECTION</p>
+                <p class="fs-2 ms-2 ">© 2020. All Rights Reserved.</p>
             </div>
             <ul class="row  align-items-center">
                 <li><a class="d-sm-none link-info fs-2 lh-1 " href="#">Sign in</a></li>
                 <li><a class="d-sm-none link-info ms-6 fs-2 lh-1" href="#">Sign up</a></li>
-                <li><a class="link-info ms-6 fs-3 lh-1" href="#"><i class="fas fa-ticket-alt"></i></a></li>
             </ul>
         </div>
+        <!-- footer 結束 -->    
     </div>
-    <div class="home-top-banner">
-        <div class="container">
-            <h2 class="font-white font-bold fs-7 lh-1 mb-1">
-                台北當代藝術展
-            </h2>
-            <p class="font-white font-bold fs-3 lh-1 mb-2">
-                01 JUN - 31 OCT
-            </p>
-            <div class="d-flex">
-                <a href="#" class="btn btn-danger-lg">購買票券</a>
-                <a href="#" class="btn btn-white-lg ms-1">詳細資訊</a>
-            </div>
-        </div>
-    </div>
-    <div class="border-bottom-dark pt-1 pb-2 mb-7">
-        <div class="container">
-             <ul class="d-flex justify-content-evenly">
-            <li><a href="#" class="link-info">音樂</a></li>
-            <li><a href="#" class="link-info">戲劇</a></li>
-            <li><a href="#" class="link-info">設計</a></li>
-            <li><a href="#" class="link-info">藝術</a></li>
-            <li><a href="#" class="link-info">美食</a></li>
-            <li><a href="#" class="link-info">旅遊</a></li>
-            <li><a href="#" class="link-info">電影</a></li>
-            <li><a href="#" class="link-info">親子</a></li>
-            <li><a href="#" class="link-info">期間限定</a></li>
-        </ul>
-        </div>
-       
-    </div>
-    <!-- 首頁熱門特展開始 -->
-    <div class="container">
-        <h3 class=" font-bold fs-7 lh-1 mb-4  ps-1">熱門特展</h3>
-        <ul class=" mb-7">
-            <li class="home-ticket">
-                <img class="w-35 h-35 object-fit-cover" src="https://images.unsplash.com/photo-1545987796-b199d6abb1b4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80" alt="2020 台味設計展">
-                <div class=" container-fluid bg-light d-flex flex-column justify-content-between ps-1 pe-1 pt-5 pb-5">
-                    <div class="d-flex justify-content-between fs-3 ">
-                        <div class="w-54">
-                            <h4 class="font-bold">2020 台味設計展</h4>
-                            <p class="font-info mb-1">$350</p>
-                            <p>一年一度的台味設計展由經濟部工業局主辦、台灣創意設計中心執行，每年，針對在地生活、文化及產業發展特色，運用設計思考詮釋新時代的意涵，並以展覽呈現在地設計。</p>
-                        </div>
-                        <span class="font-bold">
-                            01<br>JUN<br> |<br> 31<br> OCT
-                        </span>
-                    </div>
-                    <div class="d-flex align-items-center justify-content-between">
-                        <ul class="d-flex">
-                            <li><a href="#" class="btn btn-primary">購買票券</a></li>
-                            <li><a href="#" class="btn btn-primary ms-1">詳細資訊</a></li>
-                        </ul>
-
-                        <a class="link-dark" href="#"><i class="fab fa-facebook fs-5"></i></a>
-                    </div>
-                </div>
-            </li>
-            <li class="home-ticket-sm bg-light p-1 mb-2">
-                <img class="" src="https://images.unsplash.com/photo-1545987796-b199d6abb1b4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80" alt="2020 台味設計展">
-                <div class="mt-1">
-                    <div class="d-flex justify-content-between">
-                        <div class="d-flex">
-                            <h4 class="fs-2 font-bold">2020 台味設計展</h4>
-                            <a href="#" class="link-dark">
-                                <i class="fab fa-facebook fs-2 ms-1"></i>
-                            </a>
-                        </div>
-                        <span class="fs-2 font-bold">01 JUN — 31 OCT</span>
-                    </div>
-                    <p class="mt-1 mb-1 font-info">$350</p>
-                    <p class="mb-6">一年一度的台味設計展由經濟部工業局主辦、台灣創意設計中心執行，每年，針對在地生活、文化及產業發展特色，運用設計思考詮釋新時代的意涵，並以展覽呈現在地設計。</p>
-                    <ul class="d-flex">
-                        <li><a href="#" class="btn btn-primary">購買票券</a></li>
-                        <li><a href="#" class="ms-1 btn btn-primary">收藏展覽</a></li>
-                    </ul>
-                </div>
-            </li>
-            <li class="home-ticket">
-                <img class="w-35 h-35 object-fit-cover" src="https://images.unsplash.com/photo-1510520001634-6af954f45759?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1506&q=80" alt="2020 台味設計展">
-                <div class=" container-fluid bg-light d-flex flex-column justify-content-between ps-1 pe-1 pt-5 pb-5">
-                    <div class="d-flex justify-content-between fs-3 ">
-                        <div class="w-54">
-                            <h4 class="font-bold">2020 台味設計展</h4>
-                            <p class="font-info mb-1">$350</p>
-                            <p>一年一度的台味設計展由經濟部工業局主辦、台灣創意設計中心執行，每年，針對在地生活、文化及產業發展特色，運用設計思考詮釋新時代的意涵，並以展覽呈現在地設計。</p>
-                        </div>
-                        <span class="font-bold">
-                            01<br>JUN<br> |<br> 31<br> OCT
-                        </span>
-                    </div>
-                    <div class="d-flex align-items-center justify-content-between">
-                        <ul class="d-flex">
-                            <li><a href="#" class="btn btn-primary">購買票券</a></li>
-                            <li><a href="#" class="btn btn-primary ms-1">詳細資訊</a></li>
-                        </ul>
-
-                        <a class="link-dark" href="#"><i class="fab fa-facebook fs-5"></i></a>
-                    </div>
-                </div>
-            </li>
-            <li class="home-ticket-sm bg-light p-1 mb-2">
-                <img class="" src="https://images.unsplash.com/photo-1510520001634-6af954f45759?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1506&q=80" alt="2020 台味設計展">
-                <div class="mt-1">
-                    <div class="d-flex justify-content-between">
-                        <div class="d-flex">
-                            <h4 class="fs-2 font-bold">2020 台味設計展</h4>
-                            <a href="#" class="link-dark">
-                                <i class="fab fa-facebook fs-2 ms-1"></i>
-                            </a>
-                        </div>
-                        <span class="fs-2 font-bold">01 JUN — 31 OCT</span>
-                    </div>
-                    <p class="mt-1 mb-1 font-info">$350</p>
-                    <p class="mb-6">一年一度的台味設計展由經濟部工業局主辦、台灣創意設計中心執行，每年，針對在地生活、文化及產業發展特色，運用設計思考詮釋新時代的意涵，並以展覽呈現在地設計。</p>
-                    <ul class="d-flex">
-                        <li><a href="#" class="btn btn-primary">購買票券</a></li>
-                        <li><a href="#" class="ms-1 btn btn-primary">收藏展覽</a></li>
-                    </ul>
-                </div>
-            </li>
-            <li class="home-ticket">
-                <img class="w-35 h-35 object-fit-cover" src="https://images.unsplash.com/photo-1545178803-4056771d60a3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80" alt="2020 台味設計展">
-                <div class=" container-fluid bg-light d-flex flex-column justify-content-between ps-1 pe-1 pt-5 pb-5">
-                    <div class="d-flex justify-content-between fs-3 ">
-                        <div class="w-54">
-                            <h4 class="font-bold">2020 台味設計展</h4>
-                            <p class="font-info mb-1">$350</p>
-                            <p>一年一度的台味設計展由經濟部工業局主辦、台灣創意設計中心執行，每年，針對在地生活、文化及產業發展特色，運用設計思考詮釋新時代的意涵，並以展覽呈現在地設計。</p>
-                        </div>
-                        <span class="font-bold">
-                            01<br>JUN<br> |<br> 31<br> OCT
-                        </span>
-                    </div>
-                    <div class="d-flex align-items-center justify-content-between">
-                        <ul class="d-flex">
-                            <li><a href="#" class="btn btn-primary">購買票券</a></li>
-                            <li><a href="#" class="btn btn-primary ms-1">詳細資訊</a></li>
-                        </ul>
-
-                        <a class="link-dark" href="#"><i class="fab fa-facebook fs-5"></i></a>
-                    </div>
-                </div>
-            </li>
-            <li class="home-ticket-sm bg-light p-1 mb-2">
-                <img class="" src="https://images.unsplash.com/photo-1545178803-4056771d60a3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80" alt="2020 台味設計展">
-                <div class="mt-1">
-                    <div class="d-flex justify-content-between">
-                        <div class="d-flex">
-                            <h4 class="fs-2 font-bold">2020 台味設計展</h4>
-                            <a href="#" class="link-dark">
-                                <i class="fab fa-facebook fs-2 ms-1"></i>
-                            </a>
-                        </div>
-                        <span class="fs-2 font-bold">01 JUN — 31 OCT</span>
-                    </div>
-                    <p class="mt-1 mb-1 font-info">$350</p>
-                    <p class="mb-6">一年一度的台味設計展由經濟部工業局主辦、台灣創意設計中心執行，每年，針對在地生活、文化及產業發展特色，運用設計思考詮釋新時代的意涵，並以展覽呈現在地設計。</p>
-                    <ul class="d-flex">
-                        <li><a href="#" class="btn btn-primary">購買票券</a></li>
-                        <li><a href="#" class="ms-1 btn btn-primary">收藏展覽</a></li>
-                    </ul>
-                </div>
-            </li>
-            
-        </ul>
-    </div>
-    <!-- 首頁熱門特展結束 -->
-    <!-- 直播回顧開始 -->
-    <div class="container pb-6">
-        <h4 class=" font-bold fs-7 lh-1 mb-4 ps-1">
-            直播回顧
-        </h4>
-        <div class="home-live-stream">
-            <div class="d-flex flex-column">
-                <h5 class="font-white fs-6 font-bold mb-6"><span class="border-right-white pe-1">開幕對談</span><span class="ps-1">藝術展演巡禮</span></h5>
-                <img class="w-12 h-12 mb-1" src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/exhibition-week6/people.png" alt="臺北現代聯合總監Ken Hsu">
-                <p class=" font-white mb-1">臺北現代聯合總監｜Ken Hsu</p>
-            <p class="mb-2 font-white">獨家由藝術家、策展人、畫廊總監帶您欣賞台北藝術特展，感受雕塑、展演及當代日常文化之間微妙的關係。</p>
-            <div>
-                <a href="#" class="btn btn-danger">點此觀看</a>
-            </div>
-            
-            </div>
-            
-        </div>
-    </div>
-    <!-- 直播回顧結束 -->
-    <!-- 猜猜你也喜歡開始 -->
-    <div class="container">
-        <h4 class=" font-bold fs-7 lh-1 mb-4 ps-1">
-            猜你也喜歡...
-        </h4>
-        <ul class="home-recommendation-list">
-            <li class="home-recommendation-item1">
-                <img  class="" src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/exhibition-week6/ricardo-gomez-angel-WxpnuLzqZN4-unsplash.jpg" alt="No.22 線上設計展">
-                <h5 class="font-bold fs-3">No.22 線上設計展</h5>
-                <p>$350</p>
-            </li>
-            <li class="home-recommendation-item1">
-                <img  class=""  src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/exhibition-week6/petri-heiskanen-bR9gFJqAnzA-unsplash.jpg" alt="No.22 線上設計展">
-                <h5 class="font-bold fs-3">No.22 線上設計展</h5>
-                <p>$350</p>
-            </li>
-            <li class="home-recommendation-item2">
-                <img  class=""  src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/exhibition-week6/museums-victoria-kiDwVL_5ZBY-unsplash%20(1).jpg" alt="No.22 線上設計展">
-                <h5 class="font-bold fs-3">No.22 線上設計展</h5>
-                <p>$350</p>
-            </li>
-        </ul>
-    </div>
-    <!-- 猜猜你也喜歡結束 -->
-    <!-- 最新消息開始 -->
-    <div class="container pt-6 pt-sm-2">
-        <div class="home-news ">
-            <p class="mb-1">想收到最新消息嗎？<br>快訂閱我們！</p>
-            <div class="d-flex home-email">
-                <input class="" type="email" name="email" placeholder="輸入您的電子信箱">
-                <a href="#" class="">訂閱</a>
-            </div>
-        </div>
-    </div>
-    <!-- 最新消息結束 -->
-    <!-- footer 開始 -->
-    <div class="container pt-5 pb-5 ps-7 pe-7 p-sm-1 d-flex justify-content-between">
-        <div class="d-flex align-items-center flex-sm-column">
-            <p  class="fs-5">EXHIBINECTION</p>
-            <p class="fs-2 ms-2 ">© 2020. All Rights Reserved.</p>
-        </div>
-        <ul class="row  align-items-center">
-            <li><a class="d-sm-none link-info fs-2 lh-1 " href="#">Sign in</a></li>
-            <li><a class="d-sm-none link-info ms-6 fs-2 lh-1" href="#">Sign up</a></li>
-        </ul>
-    </div>
-    <!-- footer 結束 -->
+   
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="all.js"></script>
 </body>
+
 </html>
