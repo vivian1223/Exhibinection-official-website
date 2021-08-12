@@ -1,5 +1,13 @@
 //flex-direction
 
+@each $name in $break-points-list{
+    @media(max-width:map-get($break-points-map,$name)){
+        .flex-#{$name}-column{
+            flex-direction: column;
+        }
+    }
+}
+
 .flex-column{
     flex-direction: column;
 }

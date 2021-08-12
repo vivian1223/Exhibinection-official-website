@@ -20,13 +20,41 @@
     }
 };
 
+
 @each $direction in $padding-direction {
-    @each $name in $padding-name {
-        .p#{$direction}-#{$name}{
-            padding-#{map-get($padding-direction-base, $direction)}: $spacer *  map-get($padding-base, $name);
+    @each $padding  in $padding-name {
+        .p#{$direction}-#{$padding }{
+            padding-#{map-get($padding-direction-base, $direction)}: $spacer *  map-get($padding-base, $padding );
         }
     }
 }
+//padding with breakpoints
+@each $name in $break-points-list{
+    @media (max-width:map-get($break-points-map,$name )){
+        @each $padding in $padding-name {
+    .p-#{$name}-#{$padding}{
+        padding: $spacer * map-get($padding-base, $padding);
+    }
+    }
+    
+};
+}
+
+//padding with breakpoints
+
+    @each $direction in $padding-direction {
+        @each $name in $break-points-list{
+            @media(max-width:map-get($break-points-map,$name )){
+                @each $padding  in $padding-name {
+                    .p#{$direction}-#{$name}-#{$padding }{
+                        padding-#{map-get($padding-direction-base, $direction)}: $spacer *  map-get($padding-base, $padding );
+                    }
+                }
+            }
+    }  
+}
+
+
 
 @include mobile{
     .mx-auto-sm{
